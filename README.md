@@ -31,7 +31,7 @@ starting from an existing Nextflow pipeline that was created without
     ```
 2. Update the schema with `nf-core-tools`:
     ```
-    ff-core schema build    
+    nf-core schema build    
     ```
     **Note**: you can use the Web UI to customize the schema
 
