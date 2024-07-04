@@ -1,8 +1,13 @@
 # example-nextflow-pipeline
 
-# Creating and running a basic Nextflow workflow (with `nf-core-tools`).
+## Creating a Nextflow pipeline from scratch
 
-## Step 1 - Initialize a new pipeline without `nf-core`
+Instructions for creating a Nextflow pipeline from scratch. You may wish to use
+this instead of the default template used by `nf-core-tools` or perhaps you are
+starting from an existing Nextflow pipeline that was created without
+`nf-core-tools`.
+
+### Step 1 - Initialize a new pipeline without `nf-core`
 
 1. Create an `.nf-core.yml` file. It can be empty. This is just so that
    `nf-core-tools` recognizes the current working directory as the project
@@ -16,20 +21,39 @@
     ```sh
     nextflow run main.nf --input test.fastq.gz
     ```
+### Step 2 - Adding parameters and updating `nextflow_schema.json`
 
-## Step 1 - Initialize a new pipeline using `nf-core`
+1. Make changes to `nextflow.config`:
+    ```
+    params {
+      input = null
+    }
+    ```
+2. Update the schema with `nf-core-tools`:
+    ```
+    ff-core schema build    
+    ```
+    **Note**: you can use the Web UI to customize the schema
+
+## Creating a new Nextflow pipeline with `nf-core-tools`
+
+`nf-core-tools` can initialize a new Nextflow pipeline from a starter template:
+
+### Step 1 - Initialize a new pipeline
 
 ```sh
 nf-core create # follow the instructions
 ```
 
-## Step 2 - Commit the code and push to GitHub
+### Step 2 - Commit the code and push to GitHub
 
 1. (create git repo)
 2. `git remote add origin https://github.com/username/repo.git`
 5. `git push -u origin master`
 
-## Step 3 - Create the Workflow on One Codex
+## Deploying Nextflow pipelines to One Codex
+
+### Step 1 - Create the Workflow on One Codex
 
 1. Go to `https://app.onecodex.com` and log in if you aren't already
 2. Go to "Run Workflows" > "Create New Workflow"
@@ -39,7 +63,7 @@ nf-core create # follow the instructions
 
 You should now be able to run your workflow on one of your samples
 
-# Adding Parameters
+## Adding Parameters to Nextflow pipelines
 
 1. Add your parameter to `nextflow.config`
     ```
@@ -64,7 +88,7 @@ You should now be able to run your workflow on one of your samples
     One Codex, you must tag your commits and reference those tags under
     "Repository Tag" on the Edit Workflow page.
 
-# Adding a module with `nf-core-tools`
+## Adding a module with `nf-core-tools`
 
 ```
 nf-core modules install vcftools
@@ -73,7 +97,7 @@ git commit -m "Added vcftools modules"
 git push origin master
 ```
 
-# Versioning
+## Versioning
 
 ## Draft and Published Workflows
 
@@ -86,16 +110,16 @@ repository changes.
 - - What happens if I don't pin using a `git tag` wish a "published"
   workflow and then update `master`?
 
-# Custom Docker Images
+## Custom Docker Images
 
 Currently, we support pulling public Docker images from the following
 repositories. If you need to add a private repository, please [contact
 support]().
 
-# Assets
+## Assets
 
-## What are assets?
+### What are assets?
 
-## How do I create an asset?
+### How do I create an asset?
 
-## Automatic extraction of `.tar.gz` assets
+### Automatic extraction of `.tar.gz` assets
