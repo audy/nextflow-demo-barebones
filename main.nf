@@ -1,19 +1,15 @@
-process countLines {
-    container "ubuntu:latest"
+include { FASTP } from './modules/nf-core/fastp'
 
-    input:
-    path fastqPath
-
-    output:
-    path 'line-count.txt'
-
-    """
-    gzip -cd $fastqPath | wc -l > line-count.txt
-    """
-}
 
 workflow {
-    channel.fromPath(params.input, checkIfExists: true)
-    | countLines
-    | view
+    FASTP(
+        Channel.of([
+            [ id:'test', single_end:true ],
+            [ file(params.input, checkIfExists: true) ]
+        ]),
+        [],
+        false,
+        false,
+        false
+    )
 }
