@@ -90,39 +90,3 @@ You should now be able to run your workflow on one of your samples
     **Note**: In order to ensure that the correct version is being used by
     One Codex, you must tag your commits and reference those tags under
     "Repository Tag" on the Edit Workflow page.
-
-## Adding a module with `nf-core-tools`
-
-```
-nf-core modules install vcftools
-git add . 
-git commit -m "Added vcftools modules"
-git push origin master
-```
-
-## Versioning
-
-## Draft and Published Workflows
-
-## Using Git Tags
-
-We recommend using git tagging to pin your Workflow to a specific version
-of your code. This will prevent accidentally pushing updates when the Git
-repository changes.
-
-- - What happens if I don't pin using a `git tag` wish a "published"
-  workflow and then update `master`?
-
-## Custom Docker Images
-
-Currently, we support pulling public Docker images from the following
-repositories. If you need to add a private repository, please [contact
-support]().
-
-## Assets
-
-### What are assets?
-
-### How do I create an asset?
-
-### Automatic extraction of `.tar.gz` assets
