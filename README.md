@@ -12,11 +12,14 @@ starting from an existing Nextflow pipeline that was created without
 1. Create an `.nf-core.yml` file. It can be empty. This is just so that
    `nf-core-tools` recognizes the current working directory as the project
    root. Otherwise, it will try to install modules in `/`.
+   ```sh
+   touch .nf-core.yml
+   ```
 2. Install a module with `nf-core-tools`
     ```sh
     nf-core modules install fastp
     ```
-3. Update `main.nf` (see example in this repo)
+3. Update `main.nf` to add a `fastp` step (see example in this repo)
 4. Run the pipeline:
     ```sh
     nextflow run main.nf --input test.fastq.gz
