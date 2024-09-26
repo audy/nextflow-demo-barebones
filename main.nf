@@ -1,5 +1,5 @@
 process MAKE_FILE{
-    container "ubuntu:latest"
+    container "docker.io/library/ubuntu:latest"
 
     output:
     path("test.txt")
