@@ -1,5 +1,5 @@
 process MAKE_FILE{
-    container "docker.io/library/ubuntu:latest"
+    container 'biocontainers/fastqc:0.12.1--hdfd78af_0'
 
     output:
     path("test.txt")
