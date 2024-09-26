@@ -1,4 +1,6 @@
 process MAKE_FILE{
+    container "ubuntu:latest"
+
     output:
     path("test.txt")
 
