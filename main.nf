@@ -1,10 +1,13 @@
-include { FASTQC } from './modules/nf-core/fastqc'
+process MAKE_FILE{
+    output:
+    path("test.txt")
+
+    script:
+    """
+    date > test.txt
+    """
+}
 
 workflow {
-    fastq_out = FASTQC(
-        Channel.of([
-            [ id:'test', single_end:true ],
-            [ file(params.input_fastq, checkIfExists: true) ]
-        ]),
-    )
+  MAKE_FILE()
 }
