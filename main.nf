@@ -1,15 +1,10 @@
-include { FASTP } from './modules/nf-core/fastp'
-
+include { FASTQC } from './modules/nf-core/fastqc'
 
 workflow {
-    FASTP(
+    fastq_out = FASTQC(
         Channel.of([
             [ id:'test', single_end:true ],
             [ file(params.input_fastq, checkIfExists: true) ]
         ]),
-        [],
-        false,
-        false,
-        false
     )
 }
